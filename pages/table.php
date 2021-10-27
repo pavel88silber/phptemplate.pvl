@@ -1,4 +1,8 @@
 <?php
+
+    // $title = 'Table';
+    // $header = "$welcome, Guest";
+
     echo '<h3>Table</h3>';
     $rows = 10;
     $cols = 10;
@@ -15,4 +19,5 @@
         echo "</tr>";     
     }
     echo "</table>";
+    
 ?>
