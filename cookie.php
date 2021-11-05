@@ -15,4 +15,4 @@
     setcookie("lastVisit", time(), 0x7FFFFFFF);
 ?>
 
-<h2>Cookies page</h2>
+<p>cookies set</p>

@@ -25,7 +25,7 @@
     <blockquote>
         <?php
             if ($visitCounter==1) {
-                echo "Thanks for your visit";
+                echo "Thanks for your first time visit";
             } else {
                 echo "This your $visitCounter visit";
                 echo "<br>";
