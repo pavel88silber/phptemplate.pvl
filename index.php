@@ -2,20 +2,26 @@
 
     if(isset($_GET['page']) && $_GET['page'] != '' ){    
         $page = $_GET['page']; // page being requested
-        // $title = $_GET['title'];
+        // $title = 'Home';
+        $_POST['title'] = 'Home';
     } else{
-        $page = 'pages/home.php'; // default page
+        $page = '/home'; // default page
+        $_POST['title'] = 'Home';
+        $_GET['page'] = 'home';
         // $title = 'Home';
     }
-
+    
+    $_POST['title'] = $title;
     include('inc/head.php');
     include('inc/menu.php');
 
-
+    // echo 'here';
 
     echo '<div id="main-content">';
     // Dynamic page based on query string
     include('pages/'.$page.'.php');
+    
+    $_POST['title'] = $title;
     echo '</div>';
 
     include('inc/footer.php');
@@ -40,23 +46,11 @@
         'password' => '1234',
     ];
 
-    $user1 = [
-        'name' => 'User34534',
-        'login' => 'toor',
-        'password' => '5678',
-    ];
-
-    // echo '$_COOKIE["name"]=>' . $_COOKIE["name"];
-    echo '<br>';
-
     // echo serialize($user);  // cookie to str
 
     // Для сохранения целосности
     $str = base64_encode( serialize($user) );
     setcookie("user", $str);
-
-    echo 'after base64_encode and serialize and set cookie $str = ' . $str;
-    echo '<hr>';
 
     echo 'after base64_encode and serialize and set cookie $user = ' . $user;
     print_r($user);
@@ -68,13 +62,6 @@
     echo '<br>';
 
     echo '$str  ' . $str;
-
-
-    // $test = '42db7b8a-7c5d-4fb6-a5af-918fe23b2680';
-    // setcookie("test", $test);
-    
-    // $testResult = base64_decode($_COOKIE["test"]);
-    // $testResult = unserialize($_COOKIE["test"]);
     
     $user = unserialize( base64_decode($_COOKIE["user"]));
     // setcookie("user1", $user1);
@@ -83,22 +70,14 @@
     // echo $testResult;
     
     print_r($user);
-    // echo $user1
-    
-    // echo $_COOKIE["test"];
     
     echo '<hr>';
 
-    $content ='YTozOntzOjQ6Im5hbWUiO3M6OToiVXNlcjM0MjM0IjtzOjU6ImxvZ2luIjtzOjQ6InJvb3QiO3M6ODoicGFzc3dvcmQiO3M6NDoiMTIzNCI7fQ%3D%3D';
-
-    setcookie("test2", $content);
-
-    $test2 = base64_decode($_COOKIE["test2"]);
-
-    print_r($test2);
 
     echo '<hr>';
     echo 'serialize сериализация приврящяет из массива в строку ';
     echo '<br>';
+    echo 'base64_decode упокавать строку чтобы не рассыпаоась ';
+
 
 ?>
