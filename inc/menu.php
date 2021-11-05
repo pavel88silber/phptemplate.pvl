@@ -4,4 +4,8 @@
     <a href="index.php?page=clients">Clients</a>
     <a href="index.php?page=table">Table</a>
     <a href="index.php?page=contact">Contact</a>
+
+
+
+
 </menu>

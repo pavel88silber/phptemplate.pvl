@@ -1,5 +1,9 @@
-<h1>This products page</h1>
+    <?php
+        $title = 'Products';
+    ?>
+<h1>
+    <?php
+    echo "This $title page";
+    ?>
+</h1>
 
-<?php
-    $title = 'Products';
-?>

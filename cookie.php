@@ -1,9 +1,18 @@
-
 <?php
     $visitCounter = 0;
-    $visitCounter2 =100;
-    $lastVisit = getdate();
+    if(isset($_COOKIE["visitCounter"])) {
+        $visitCounter = $_COOKIE["visitCounter"];
+    }
+    $visitCounter++;
 
-    setcookie("test3", $visitCounter2);
 
-    
+    $lastVisit = "";
+    if(isset($_COOKIE["lastVisit"])) {
+        $lastVisit = date("d-m-Y H:i:s", $_COOKIE["lastVisit"]);
+    }
+
+    setcookie("visitCounter", $visitCounter, 0x7FFFFFFF);
+    setcookie("lastVisit", time(), 0x7FFFFFFF);
+?>
+
+<h2>Cookies page</h2>

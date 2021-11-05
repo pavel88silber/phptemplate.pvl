@@ -1,4 +1,5 @@
 <?php
+    include('cookie.php');
 
     if(isset($_GET['page']) && $_GET['page'] != '' ){    
         $page = $_GET['page']; // page being requested
@@ -18,6 +19,25 @@
     // echo 'here';
 
     echo '<div id="main-content">';
+
+    ?>
+
+    <blockquote>
+        <?php
+            if ($visitCounter==1) {
+                echo "Thanks for your visit";
+            } else {
+                echo "This your $visitCounter visit";
+                echo "<br>";
+                echo "Your last visit $lastVisit <br>";
+            }
+        ?>
+    </blockquote>
+
+
+<?php
+
+
     // Dynamic page based on query string
     include('pages/'.$page.'.php');
     
@@ -26,6 +46,8 @@
 
     include('inc/footer.php');
 
+
+    
     echo '$_GET => '. $_GET['page'];
     echo '<br>';
     echo '$_POST => '. $_POST['title'];
