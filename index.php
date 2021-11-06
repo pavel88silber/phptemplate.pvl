@@ -1,4 +1,7 @@
 <?php
+    // Через 5 секунд вы будете перенаправлены
+    // header("Refresh: 5; url=http://www.specialist.ru");
+
     include('cookie.php');
 
     if(isset($_GET['page']) && $_GET['page'] != '' ){    
@@ -34,6 +37,23 @@
         ?>
     </blockquote>
 
+    <form action="<?=$_SERVER["PHP_SELF"]?>">
+            Where you want to go?
+            <select name="url" size="1">
+                <option value=
+                "http://www.google.ru">Google
+                </option>
+                <option value=
+                "http://www.yandex.ru">Yandex
+                </option>
+                <option value=
+                "http://www.yahoo.com">Yahoo
+                </option>
+            </select>
+            <input type="button" value="Go">
+    </form>
+
+    <p>Current time is: <?=date("H:i:s")?></p>
 
 <?php
 
@@ -53,14 +73,6 @@
     echo '$_POST => '. $_POST['title'];
 
     echo '<hr>';
-
-    // echo $_COOKIE["name"];
-
-////////////////////////////// COOKIES  //////////////////////////////
-    // DELETE COOKIE
-    // setcookie("name", "Vasya", time()-3600);
-
-    // setcookie("name", "User34853458", time()+1200);
 
     $user = [
         'name' => 'User34234',
@@ -86,10 +98,7 @@
     echo '$str  ' . $str;
     
     $user = unserialize( base64_decode($_COOKIE["user"]));
-    // setcookie("user1", $user1);
-    
-    // print_r($testResult);
-    // echo $testResult;
+
     
     print_r($user);
     
