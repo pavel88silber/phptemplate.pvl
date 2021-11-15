@@ -19,10 +19,8 @@
     include('inc/head.php');
     include('inc/menu.php');
 
-    // echo 'here';
-
+ 
     echo '<div id="main-content">';
-
     ?>
 
     <blockquote>
@@ -37,6 +35,9 @@
         ?>
     </blockquote>
 
+    <?
+    include('headers/go.php');
+    ?>
     <form action="<?=$_SERVER["PHP_SELF"]?>">
             Where you want to go?
             <select name="url" size="1">
@@ -50,7 +51,7 @@
                 "http://www.yahoo.com">Yahoo
                 </option>
             </select>
-            <input type="button" value="Go">
+            <input type="submit" value="Go">
     </form>
 
     <p>Current time is: <?=date("H:i:s")?></p>
@@ -109,6 +110,4 @@
     echo 'serialize сериализация приврящяет из массива в строку ';
     echo '<br>';
     echo 'base64_decode упокавать строку чтобы не рассыпаоась ';
-
-
 ?>

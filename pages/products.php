@@ -7,6 +7,10 @@
     ?>
 </h1>
 
+<input type="button" value="Refresh this page">
+
+
+
 
     
     

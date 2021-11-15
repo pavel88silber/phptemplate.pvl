@@ -16,6 +16,27 @@
         setcookie("lastVisit", time(), 0x7FFFFFFF);    
     }
 
-?>
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-<p>cookies set</p>
+        $name = strip_tags($_POST["name"]);
+        $age = $_POST["age"] * 1;
+
+        setcookie("userName", $name);
+        setcookie("userAge", $age);
+    
+        // перезапрос формы методом GET
+        header("Location: " . $_SERVER["PHP_SELF"
+        ]);
+        exit;
+
+        } else {
+            // Чтение куки
+            $name = strip_tags($_COOKIE["userName"]);
+            $age = $_COOKIE["userAge"] * 1;
+        }
+
+
+
+    
+

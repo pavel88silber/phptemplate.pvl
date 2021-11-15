@@ -4,3 +4,5 @@
     // $_POST['title'] = 'contact';
     $title = 'Contact';
 ?>
+
+<h2><a href="/headers/charset.php">header("Content-type: TEST)</a></h2>
